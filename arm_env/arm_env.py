@@ -67,6 +67,7 @@ class ArmHitEnv(gym.Env):
                                         targetPosition=self.initial_positions[joint_name])
         time.sleep(1)
         self._target = 1
+        # self.hit = 0
         # print(self.jointIndex)
         self.read_state()
     
@@ -153,7 +154,6 @@ class ArmHitEnv(gym.Env):
     def reset(self):
         # p.resetSimulation()
         self.reload_robot()
-        time.sleep(2)
         return self.state
         # self.state = p.getLinkState(self.pandaUid, 6)
     
