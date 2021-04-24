@@ -16,4 +16,12 @@
 
   Take turns ringing the bells around the red pillar and avoid touching the red pillar obstacle
 
+- Train
+  
+  python3 hit_learn.py
+ 
+- Visulization
+
+  tensorboard logdir log
+
   
