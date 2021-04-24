@@ -20,7 +20,7 @@
   
   python3 hit_learn.py
  
-- Visulization
+- Visualization
 
   tensorboard logdir log
 
