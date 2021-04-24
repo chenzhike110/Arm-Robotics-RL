@@ -146,7 +146,8 @@ class ArmHitEnv(gym.Env):
         jointStates = p.getJointStates(self.robot_id, self._joint_name_to_ids.values())
         jointPoses = [x[0] for x in jointStates]
         jointVelocity = [x[1] for x in jointStates]
-        self.state = np.hstack((np.array(jointPoses), np.array(jointVelocity)))
+        # self.state = np.hstack((np.array(jointPoses), np.array(jointVelocity)))
+        self.state = np.array(jointPoses)
         self.state = np.append(self.state, self._target)
         # P_min, P_max = p.getAABB(robot_id)
 
@@ -159,8 +160,8 @@ class ArmHitEnv(gym.Env):
     
     def outside(self):
         linkstate = p.getLinkState(self.robot_id, self.end_eff_idx)
-        if linkstate[0][2] > 0.5:
-            return True
+        # if linkstate[0][2] > 0.5:
+        #     return True
         if linkstate[0][0] < 0:
             return True
         return False
